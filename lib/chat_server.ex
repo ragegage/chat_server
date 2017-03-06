@@ -22,7 +22,7 @@ defmodule ChatServer do
   def loop(state) do
     receive do
       {:add_msg, msg} ->
-        loop([state | msg])
+        loop(state ++ [msg])
       {:get, from} ->
         send(from, state)
         loop(state)
