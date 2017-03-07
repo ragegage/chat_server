@@ -4,6 +4,7 @@ A simple, multi-room chat server that stores chat content using its `create/2` f
 
 ## Usage:
 
+1. `git clone`
 1. `iex -S mix`
 1. `ChatServer.Supervisor.start_link`
 1. `ChatServer.Supervisor.start_room("lobby")`
