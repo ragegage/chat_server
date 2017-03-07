@@ -1,19 +1,12 @@
 # ChatServer
 
-**TODO: Add description**
+A simple, multi-room chat server that stores chat content using its `create/2` function and sends it back to the user via its `get/1` function.
 
-## Installation
+## Usage:
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `chat_server` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [{:chat_server, "~> 0.1.0"}]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/chat_server](https://hexdocs.pm/chat_server).
-
+1. `iex -S mix`
+1. `ChatServer.Supervisor.start_link`
+1. `ChatServer.Supervisor.start_room("lobby")`
+1. `ChatServer.get("lobby") #=> []`
+1. `ChatServer.create("lobby", "hello world")`
+1. `ChatServer.get("lobby") #=> [%ChatServer.Message{content: "hello world", username: "anon"}]`
